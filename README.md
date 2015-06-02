@@ -1,0 +1,1 @@
+# ❱ [get my resume](http://github.com/etnbrd/resume/raw/master/resume.pdf)

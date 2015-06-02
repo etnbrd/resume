@@ -1,0 +1,121 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[top=10mm, bottom=10mm, left=10mm, right=10mm]{geometry}
+
+% \usepackage[scaled]{helvet}
+\usepackage[sfdefault,thin]{roboto}  %% Option 'sfdefault' only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{xcolor}
+
+% ---------------------
+
+\newlength{\rigthCol}
+\newlength{\leftCol}
+\newlength{\titleCol}
+
+\newlength{\topMarginHeader}
+\newlength{\bottomMarginHeader}
+
+\newlength{\topMarginSection}
+\newlength{\bottomMarginSection}
+
+\newlength{\topMarginSubSection}
+\newlength{\bottomMarginSubSection}
+
+\newlength{\vSpaceMargin}
+
+\newlength{\writingLength}
+
+% ---------------------
+
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0cm}
+
+\setlength{\vSpaceMargin}{0.5cm}
+
+\setlength{\writingLength}{\textwidth}
+\addtolength{\writingLength}{-2\vSpaceMargin}
+
+\setlength{\rigthCol}{0.25\writingLength}
+\setlength{\leftCol}{0.75\writingLength}
+\setlength{\titleCol}{0.375\writingLength}
+
+\setlength{\topMarginHeader}{0pt}
+\setlength{\bottomMarginHeader}{30pt}
+
+\setlength{\topMarginSection}{10pt}
+\setlength{\bottomMarginSection}{0pt}
+
+\setlength{\topMarginSubSection}{0pt}
+\setlength{\bottomMarginSubSection}{0pt}
+
+% ---------------------
+
+\newcommand{\mycolor}[1]{%
+	\textcolor[RGB]{255,0,73}{#1}%\textcolor[RGB]{59,134,254}{#1}
+}
+
+\newcommand{\highlight}[1]{%
+	\mycolor{#1}
+}
+
+\newcommand{\rmp}[1]{
+	\begin{minipage}[t]{\rigthCol}
+		\begin{flushright}
+			#1
+		\end{flushright}
+	\end{minipage}	
+}
+
+\newcommand{\lmp}[1]{
+	\begin{minipage}[t]{\leftCol}
+		\begin{flushleft}
+			#1
+		\end{flushleft}
+	\end{minipage}
+}
+
+\newcommand{\head}[1]{
+	\begin{minipage}[t]{\titleCol}
+		\begin{flushleft}
+			#1
+		\end{flushleft}
+	\end{minipage}
+}
+
+\newcommand{\rltabvline}[3]{
+	\begin{tabular}{@{} p{\rigthCol} @{\hspace{\vSpaceMargin}} | @{\hspace{\vSpaceMargin}} p{\titleCol} @{} p{\titleCol}}
+	\rmp{#1} & \head{#2} & \head{#3}
+	\end{tabular}
+}		
+
+\newcommand{\rltab}[2]{
+	\begin{tabular}{@{} p{\rigthCol} @{\hspace{2\vSpaceMargin}} p{\leftCol} @{}}
+	\rmp{#1} & \lmp{#2}
+	\end{tabular}
+}
+
+\newcommand{\paragraphTitle}[1]{
+		\huge{\mycolor{#1}}
+}
+
+\newcommand{\header}[3]{
+	\rltabvline{#1}{\LARGE{#2}}{\LARGE{#3}}
+	\vspace{\bottomMarginHeader}\\
+}
+
+\renewcommand{\section}[1]{
+	\vspace{\topMarginSection}
+	\rltab{}{\paragraphTitle{#1}}
+	\vspace{\bottomMarginSection}\\
+}
+
+\renewcommand{\subsection}[2]{
+	\rltab{\textbf{#1}}{#2}\\
+}
+
+% ---------------------
