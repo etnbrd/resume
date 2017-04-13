@@ -1,1 +1,1 @@
-# ❱ [get my resume](http://github.com/etnbrd/resume/raw/master/resume.pdf)
+# ❱ [get my resume](https://gitlab.com/etnbrd/resume/raw/master/resume.pdf)
