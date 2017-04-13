@@ -1,6 +1,6 @@
 FILE = resume
 NAME = resume
-PDFLATEX = mkdir -p .tmp && cd src && pdflatex -shell-escape --output-directory ../.tmp ../src/${FILE}.tex && mv ../.tmp/${FILE}.pdf ../${NAME}.pdf && cd ..
+PDFLATEX = mkdir -p .tmp && cd src && xelatex -shell-escape --output-directory ../.tmp ../src/${FILE}.tex && mv ../.tmp/${FILE}.pdf ../${NAME}.pdf && cd ..
 
 .PHONY: all
 

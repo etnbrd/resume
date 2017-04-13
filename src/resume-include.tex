@@ -4,12 +4,16 @@
 \usepackage[top=10mm, bottom=10mm, left=10mm, right=10mm]{geometry}
 
 % \usepackage[scaled]{helvet}
-\usepackage[sfdefault,thin]{roboto}  %% Option 'sfdefault' only if the base font of the document is to be sans serif
-\usepackage[T1]{fontenc}
-\renewcommand*\familydefault{\sfdefault}
+% \usepackage[sfdefault,thin]{montserrat}  %% Option 'sfdefault' only if the base font of the document is to be sans serif
+% \renewcommand*\familydefault{\sfdefault}
 \usepackage[hidelinks]{hyperref}
 
 \usepackage{xcolor}
+
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+
+\setmainfont[Ligatures=TeX, UprightFont={* Light}, BoldFont={* Bold}]{Montserrat}
 
 % ---------------------
 
@@ -68,7 +72,7 @@
 		\begin{flushright}
 			#1
 		\end{flushright}
-	\end{minipage}	
+	\end{minipage}
 }
 
 \newcommand{\lmp}[1]{
@@ -91,7 +95,7 @@
 	\begin{tabular}{@{} p{\rigthCol} @{\hspace{\vSpaceMargin}} | @{\hspace{\vSpaceMargin}} p{\titleCol} @{} p{\titleCol}}
 	\rmp{#1} & \head{#2} & \head{#3}
 	\end{tabular}
-}		
+}
 
 \newcommand{\rltab}[2]{
 	\begin{tabular}{@{} p{\rigthCol} @{\hspace{2\vSpaceMargin}} p{\leftCol} @{}}
@@ -111,7 +115,7 @@
 \renewcommand{\section}[1]{
 	\vspace{\topMarginSection}
 	\rltab{}{\paragraphTitle{#1}}
-	\vspace{\bottomMarginSection}\\
+	\vspace{\bottomMarginSection}
 }
 
 \renewcommand{\subsection}[2]{
